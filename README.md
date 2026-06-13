@@ -6,7 +6,7 @@
 
 ### Turn your paper's raw data into publication-ready figures & tables — with one AI skill.
 
-[![Claude Skill](https://img.shields.io/badge/Claude-Skill-8A2BE2)](https://claude.com/claude-code)
+[![Agent Skill](https://img.shields.io/badge/Agent-Skill-8A2BE2)](https://claude.com/claude-code)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Output](https://img.shields.io/badge/output-EN%20%2F%20双语%20%2F%20中文-red.svg)](#-output-language)
@@ -16,10 +16,10 @@
 
 ---
 
-**paper-figures** is a [Claude](https://claude.com/claude-code) skill that takes a manuscript and
-its **raw data** and produces the figures and tables a journal will accept. Every result comes from
-genuine statistical computation on your own data, and each chart is chosen to fit what the paper
-sets out to argue. Figures are drawn by plotting code (matplotlib, seaborn, and friends), so the
+**paper-figures** is an **Agent Skill** — portable across [Claude Code](https://claude.com/claude-code),
+OpenAI Codex, and other skill-capable agents — that takes a manuscript and its **raw data** and
+produces the figures and tables a journal will accept. Every result comes from genuine statistical
+computation on your own data, and each chart is chosen to fit what the paper sets out to argue. Figures are drawn by plotting code (matplotlib, seaborn, and friends), so the
 whole pipeline is free of any generative image model and stays well clear of the AI
 image-generation line — every pixel traces back to a number in your dataset. The skill reads the
 paper, finds where visuals are needed, picks the right statistics and chart for the data, applies
@@ -107,7 +107,7 @@ The skill is a disciplined workflow, not a one-shot prompt — the same path a c
 
 ## 🌐 Output language
 
-Tell Claude which language you want the captions, annotations and report in — or let it infer
+Tell your agent which language you want the captions, annotations and report in — or let it infer
 from your manuscript:
 
 - **English only** — international journal / English manuscript
@@ -158,13 +158,13 @@ Once installed, the skill triggers when you ask the agent to make figures or tab
 
 ## 📝 Usage
 
-Just describe the task to Claude with your manuscript and data at hand:
+Just describe the task to your agent with your manuscript and data at hand:
 
 > - *"Here's my manuscript and `results.xlsx` — make the figures for the Results section, formatted for Nature, captions in English."*
 > - *"为这篇论文的实验数据画一张分组比较图,目标期刊是 IEEE 双栏,图注用中文。"*
 > - *"Turn `cohort.csv` into a Kaplan–Meier figure and a baseline characteristics table (三线表), bilingual report."*
 
-Claude reads the paper, proposes a figure/table plan, picks the statistics and chart type,
+Your agent reads the paper, proposes a figure/table plan, picks the statistics and chart type,
 applies the journal preset, renders with Python, self-checks the image, exports the numbered
 assets, and gives you the Word report in your chosen language.
 
@@ -174,7 +174,7 @@ assets, and gives you the Word report in your chosen language.
 
 ```
 paper-figures/                     ← the skill (install this folder)
-├── SKILL.md                       ← the workflow Claude follows
+├── SKILL.md                       ← the workflow the agent follows
 ├── requirements.txt
 ├── references/                    ← decision guides loaded on demand
 │   ├── chart-selection.md         ·  data shape × claim → chart type
