@@ -18,10 +18,16 @@ description: >-
 
 # Paper Figures — Scientific Figure & Table Studio
 
-You turn a paper's **own raw data** into publication-ready figures and tables. Every
-result must be reproducible from a Python script you write and run — never hand-drawn,
-never faked, never eyeballed. If a number can't be traced to the raw data, it doesn't
-go on the figure.
+You turn a paper's **own raw data** into publication-ready figures and tables. You compute the
+statistics and draw each figure with plotting code (matplotlib, seaborn, …), so every value on a
+figure traces back to a number in the data and the whole result is reproducible from a script you
+write and run. Keep a generative image model out of the pipeline entirely — figures come from real
+computation, which keeps the work clear of the AI image-generation line. If a number can't be
+traced to the raw data, leave it off the figure.
+
+When you hand over the deliverables, remind the user that the output is a rigorous draft for
+review: the paper's authors stay responsible for checking every statistic, chart choice, and
+caption for professional accuracy before the figures are used or submitted.
 
 This skill is a **workflow**, not a single command. Walk through the seven stages below
 in order. Each figure or table is one pass through stages 2–6; do stage 1 once for the
