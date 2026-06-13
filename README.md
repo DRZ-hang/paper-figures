@@ -258,6 +258,6 @@ Per-example details and license notes: [penguins](examples/penguins-sexual-dimor
 
 <div align="center">
 
-**Built with [Claude Code](https://claude.com/claude-code).** If this helps your research, please ⭐ the repo.
+** If this helps your research, please ⭐ the repo.
 
 </div>
