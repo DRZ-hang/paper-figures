@@ -23,8 +23,10 @@ follow-up): read the data → frame each figure → pick the right statistics �
 | **Fig 6** | [`Fig6.png`](figures/Fig6.png) | **logistic ROC**, 5-fold cross-validated AUC |
 | **Table 1** | [`Table1.docx`](figures/Table1.docx) | three-line (三线表) — baseline characteristics by outcome |
 | **Table 2** | [`Table2.docx`](figures/Table2.docx) | three-line — multivariable Cox model |
-| **Report (Word)** | [`Figure_Report.docx`](Figure_Report.docx) | **all figures embedded** + bilingual captions/annotations/citations |
-| **Report (md)** | [`figure_report.md`](figure_report.md) | same content, Markdown version |
+| **Report — English** | [`Figure_Report_EN.docx`](Figure_Report_EN.docx) | figures embedded, English-only |
+| **Report — bilingual** | [`Figure_Report.docx`](Figure_Report.docx) | figures embedded, 中文 + English |
+| **Report — 中文** | [`Figure_Report_ZH.docx`](Figure_Report_ZH.docx) | figures embedded, Chinese-only / 全中文 |
+| **Report (md)** | [`figure_report.md`](figure_report.md) | Markdown version (bilingual) |
 
 | | | |
 |:---:|:---:|:---:|
@@ -43,7 +45,9 @@ pip install -r ../../paper-figures/requirements.txt   # needs lifelines, scikit-
 cd scripts
 for f in make_fig*.py; do python "$f"; done
 for f in make_table*.py; do python "$f"; done
-python make_report.py          # assemble the Word report (embeds figures + tables)
+python make_report.py                    # writes the report in EN, bilingual, and 中文
+# or pick one language:
+PAPERFIG_LANG=en python make_report.py   # en | zh | bilingual
 ```
 
 Outputs are written to `figures/`. Random seeds are fixed (cross-validation, jitter) for
@@ -64,10 +68,12 @@ heart-failure-survival/
 │   ├── make_fig6_roc.py                       # scikit-learn logistic + CV ROC
 │   ├── make_table1_baseline.py
 │   ├── make_table2_cox.py
-│   └── make_report.py                         # assemble the Word report
+│   └── make_report.py                         # assemble the Word report (en / zh / bilingual)
 ├── figures/                                   # generated Fig1–6 + Table1–2
-├── Figure_Report.docx                         # ★ Word report — figures embedded (stage-7 deliverable)
-└── figure_report.md                           # same report in Markdown
+├── Figure_Report_EN.docx                      # ★ Word report — English only
+├── Figure_Report.docx                         # ★ Word report — bilingual
+├── Figure_Report_ZH.docx                      # ★ Word report — 中文
+└── figure_report.md                           # report in Markdown (bilingual)
 ```
 
 ---

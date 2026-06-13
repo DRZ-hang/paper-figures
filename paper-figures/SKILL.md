@@ -29,10 +29,20 @@ whole paper and stage 7 once at the end.
 
 ## Communication & language
 
-Talk to the user in the language they write to you in (the user base is bilingual
-中文/English). The **figure report you deliver is always bilingual** — caption and
-annotations in both Chinese and English — because papers and reviewers may be in either
-language. See `assets/report_template.md`.
+Talk to the user in the language they write to you in (the user base is bilingual 中文/English).
+
+The **output language of the deliverable** (captions, annotations, the figure report) is the
+**user's choice** — different journals and readers need different things. Offer three modes and
+ask which they want if it isn't already clear from the request:
+- **English only** — for an English-language manuscript or international journal.
+- **Chinese only / 全中文** — for a Chinese thesis or journal.
+- **Bilingual (中文 + English)** — captions in both, useful while drafting or for a bilingual team.
+
+If the user doesn't specify and you can't infer it (e.g. they wrote to you in Chinese about a
+Chinese-language journal → Chinese; in English about *Nature* → English), default to **bilingual**
+and say so. `scripts/report_docx.py` takes a `lang` argument (`"en"`, `"zh"`, `"bilingual"`) that
+sets both which captions appear and the section-label language; write caption/annotation text in
+the chosen language(s) accordingly.
 
 ## Guiding principles (read once, keep in mind throughout)
 
@@ -178,21 +188,22 @@ save helper so naming and resolution are consistent (e.g. `Fig1.pdf` + `Fig1.png
 `Table1.csv`/`Table1.docx`). Export vector (PDF/SVG/EPS) for line art when the journal
 allows, high-dpi raster (TIFF/PNG, ≥300 dpi, ≥600 for line/photo combos) otherwise.
 
-Then generate **one bilingual figure report**. For every figure and table it must contain:
+Then generate **one figure report** in the user's chosen language (English / Chinese /
+bilingual — see *Communication & language*). For every figure and table it must contain:
 - the figure number and file name,
-- the **caption** (中文 + English),
+- the **caption**,
 - the **annotations** (what each panel/marker/error bar/significance symbol means,
   statistical test used, n, error definition),
 - the **in-text citation location** — the section and sentence where it should be cited,
 - a reproducibility note (data source file + the script that generated it).
 
 Deliver the report as a **Word document** (`.docx`) by default — researchers want to open,
-read, and paste from it. Use `scripts/report_docx.py` (`build_report`), which embeds each
-figure image, renders tables inline as three-line tables, and lays out the bilingual
-captions/annotations/citations. Fall back to the Markdown template `assets/report_template.md`
-if the user prefers plain text. This report is the hand-off artifact: a co-author should be
-able to drop each figure into the manuscript at the named location with the caption ready to
-paste.
+read, and paste from it. Use `scripts/report_docx.py` (`build_report(..., lang=...)`), which
+embeds each figure image, renders tables inline as three-line tables, and lays out the
+captions/annotations/citations in the chosen language. Fall back to the Markdown template
+`assets/report_template.md` if the user prefers plain text. This report is the hand-off
+artifact: a co-author should be able to drop each figure into the manuscript at the named
+location with the caption ready to paste.
 
 ---
 

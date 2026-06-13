@@ -1,8 +1,13 @@
 # Figure & Table Report / 图表报告
 
-> Fill one block per figure and table, in numbered order. Captions and annotations are
-> bilingual (中文 + English). The "Citation location" tells the author exactly where to
-> cite each item in the manuscript. Delete these instruction lines in the final report.
+> Markdown fallback for the figure report (the default deliverable is a Word `.docx` built by
+> `scripts/report_docx.py`). **Match the report's language to the user's choice** — keep only
+> the English caption for an English-only report, only the Chinese for 全中文, or both for a
+> bilingual report. This template shows the bilingual form; drop one language as needed.
+>
+> Fill one block per figure and table, in numbered order. The "Citation location" tells the
+> author exactly where to cite each item in the manuscript. Delete these instruction lines in
+> the final report.
 >
 > 每个图/表填写一个区块,按编号顺序排列。图注与标注中英双语。"引用位置"指明在正文中
 > 何处引用。完成后删除本说明行。
