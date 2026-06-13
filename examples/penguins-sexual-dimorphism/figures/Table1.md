@@ -1,0 +1,10 @@
+**Table 1.** Morphometric measurements (mean ± SD) by species and sex. n = number of penguins. Data: Gorman et al. (2014).
+
+| Species   | Sex    |   n | Culmen length (mm)   | Culmen depth (mm)   | Flipper length (mm)   | Body mass (g)   |
+|:----------|:-------|----:|:---------------------|:--------------------|:----------------------|:----------------|
+| Adelie    | Female |  73 | 37.3 ± 2.0           | 17.6 ± 0.9          | 188 ± 6               | 3369 ± 269      |
+| Adelie    | Male   |  73 | 40.4 ± 2.3           | 19.1 ± 1.0          | 192 ± 7               | 4043 ± 347      |
+| Chinstrap | Female |  34 | 46.6 ± 3.1           | 17.6 ± 0.8          | 192 ± 6               | 3527 ± 285      |
+| Chinstrap | Male   |  34 | 51.1 ± 1.6           | 19.3 ± 0.8          | 200 ± 6               | 3939 ± 362      |
+| Gentoo    | Female |  58 | 45.6 ± 2.1           | 14.2 ± 0.5          | 213 ± 4               | 4680 ± 282      |
+| Gentoo    | Male   |  61 | 49.5 ± 2.7           | 15.7 ± 0.7          | 222 ± 6               | 5485 ± 313      |

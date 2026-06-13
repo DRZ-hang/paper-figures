@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Generated figures / outputs (don't commit user data or rendered assets)
+figures/
+outputs/
+*.lock
+
+# ...but DO ship the worked example's rendered figures (they're the showcase)
+!examples/**/figures/
+!examples/**/figures/**
+
+# Claude Code local settings (machine-specific)
+.claude/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# MS Office lock/temp files
+~$*

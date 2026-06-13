@@ -1,0 +1,12 @@
+# Normalize text line endings in the repo; check out native on each OS.
+* text=auto
+
+# Treat generated assets as binary (no diff/merge/EOL conversion).
+*.png binary
+*.pdf binary
+*.docx binary
+*.tif binary
+*.tiff binary
+
+# Keep shell scripts LF even on Windows.
+*.sh text eol=lf
