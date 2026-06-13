@@ -107,7 +107,7 @@ The skill is a disciplined workflow, not a one-shot prompt — the same path a c
 **1. Get the skill** — clone this repo and drop the `paper-figures/` folder where Claude finds skills:
 
 ```bash
-git clone https://github.com/<your-username>/paper-figures.git
+git clone https://github.com/DRZ-hang/paper-figures.git
 # user-level (all projects):
 cp -r paper-figures/paper-figures ~/.claude/skills/
 # Windows PowerShell:
