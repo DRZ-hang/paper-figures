@@ -31,7 +31,8 @@
 - 🛡️ **真实计算,而非生成图像** — 图表由对原始数据的统计分析与绘图代码产生,全程没有生成式图像模型参与;结果可溯源、可复现,始终不触及 AI 生图红线。
 - 🔬 **数据优先、诚实** — 每张图都呈现数据中**本就为真**的事实;坐标轴保持忠实的基线,样本量 *n* 与误差定义都会标注,p 值由数据计算得出。
 - 📈 **自动选对图型** — 内置"数据形态 × 论证目标 → 图型 + 统计检验"的决策库。
-- 🎓 **符合期刊规范** — 可配置预设(Nature / Science / Cell / IEEE / Elsevier / PLOS + 通用默认):栏宽、字体、dpi、矢量导出、色盲安全配色。
+- 🎓 **符合期刊规范** — 可配置预设(Nature / Science / Cell / IEEE / Elsevier / PLOS + 通用默认):栏宽、字体、dpi、色盲安全配色。
+- 🧬 **矢量输出、文字可编辑** — 图表导出为真正的矢量 PDF(以及 SVG/EPS),字体内嵌、每个标签都可选可改,方便排版人员调整;同时附带高分辨率位图(PNG/TIFF)便于快速预览。
 - 📐 **学术三线表(Word)** — 审稿人期待的标准表格格式。
 - 🌏 **输出语言任你选** — 图注与报告可选全英、全中或中英双语。
 - 🧰 **主流绘图栈全覆盖** — matplotlib · seaborn · plotnine · plotly,外加 lifelines 与 scikit-learn 做生存/机器学习。
@@ -115,25 +116,36 @@
 
 ---
 
-## 🚀 安装
+## 🚀 安装与多平台部署
 
-**1. 获取技能** — 克隆本仓库,把 `paper-figures/` 文件夹放到 Claude 能发现技能的目录:
+它是一个自包含的 **Agent Skill**:`paper-figures/` 文件夹里是标准的 `SKILL.md`(YAML + Markdown)
+加 Python 脚本与资源,不依赖任何特定 agent 的运行时。**同一个文件夹可放进任何支持 skills 的主流
+agent**。
+
+**1. 获取技能:**
 
 ```bash
 git clone https://github.com/DRZ-hang/paper-figures.git
-# 用户级(所有项目可用):
-cp -r paper-figures/paper-figures ~/.claude/skills/
-# Windows PowerShell:
-# Copy-Item -Recurse paper-figures\paper-figures $env:USERPROFILE\.claude\skills\
 ```
 
-**2. 安装 Python 依赖:**
+**2. 把 `paper-figures/` 文件夹放到你所用 agent 的 skills 目录:**
+
+- **Claude Code** — `~/.claude/skills/`(所有项目)或某项目的 `.claude/skills/`:
+  ```bash
+  cp -r paper-figures/paper-figures ~/.claude/skills/
+  # Windows PowerShell:
+  # Copy-Item -Recurse paper-figures\paper-figures $env:USERPROFILE\.claude\skills\
+  ```
+- **OpenAI Codex** — 把该文件夹复制进 Codex 的 skills 目录(具体路径见你所用 Codex 的 skills 文档)。
+- **其他支持 skills 的 agent(如小龙虾等)** — 同样把 `paper-figures/` 文件夹放进该 agent 的 skills 位置即可。技能本质就是 `SKILL.md` + 脚本,一个文件夹各处通用,只是目标目录因 agent 而异。
+
+**3. 安装 Python 依赖:**
 
 ```bash
 pip install -r paper-figures/requirements.txt
 ```
 
-之后当你请求 Claude 为论文绘制图表时,技能会自动触发。
+安装后,当你请求 agent 为论文绘制图表时,技能会自动触发。
 
 > 运行 `python paper-figures/scripts/figstyle.py --list` 可查看内置期刊预设。
 

@@ -34,7 +34,8 @@ bilingual** — with every caption, annotation, and in-text citation location.
 - 🛡️ **Real computation, not generated images** — figures come from statistical analysis and plotting code run on your raw data. The pipeline uses no generative image model, so results are traceable, reproducible, and stay clear of the AI image-generation line.
 - 🔬 **Data-first & honest** — every figure reveals what is *already true* in your data. Axes keep a faithful baseline, sample sizes and error definitions are stated, and p-values are computed from the data.
 - 📈 **The right chart, chosen for you** — a built-in decision guide maps your data's *shape* + your *claim* to the correct chart and statistical test.
-- 🎓 **Journal-ready formatting** — configurable presets (Nature / Science / Cell / IEEE / Elsevier / PLOS + a generic default): column widths, fonts, dpi, vector export, colorblind-safe palettes.
+- 🎓 **Journal-ready formatting** — configurable presets (Nature / Science / Cell / IEEE / Elsevier / PLOS + a generic default): column widths, fonts, dpi, colorblind-safe palettes.
+- 🧬 **Vector output with editable text** — figures export as true vector PDF (and SVG/EPS), with fonts embedded so every label stays selectable and editable for a typesetter; a high-dpi raster (PNG/TIFF) ships alongside for quick preview.
 - 📐 **Academic three-line tables (三线表)** in Word, the standard format reviewers expect.
 - 🌏 **Output language is your choice** — English-only, Chinese-only, or bilingual captions & reports.
 - 🧰 **Full plotting stack** — matplotlib · seaborn · plotnine · plotly, plus lifelines & scikit-learn for survival/ML.
@@ -120,25 +121,36 @@ See the heart-failure example for the same report rendered
 
 ---
 
-## 🚀 Install
+## 🚀 Install & deploy
 
-**1. Get the skill** — clone this repo and drop the `paper-figures/` folder where Claude finds skills:
+It's a self-contained **Agent Skill** — the `paper-figures/` folder holds a standard `SKILL.md`
+(YAML + Markdown) plus Python scripts and assets, with no agent-specific runtime. The same folder
+drops into any major agent that supports skills.
+
+**1. Get the skill:**
 
 ```bash
 git clone https://github.com/DRZ-hang/paper-figures.git
-# user-level (all projects):
-cp -r paper-figures/paper-figures ~/.claude/skills/
-# Windows PowerShell:
-# Copy-Item -Recurse paper-figures\paper-figures $env:USERPROFILE\.claude\skills\
 ```
 
-**2. Install the Python dependencies:**
+**2. Put the `paper-figures/` folder where your agent looks for skills:**
+
+- **Claude Code** — `~/.claude/skills/` (all projects) or a project's `.claude/skills/`:
+  ```bash
+  cp -r paper-figures/paper-figures ~/.claude/skills/
+  # Windows PowerShell:
+  # Copy-Item -Recurse paper-figures\paper-figures $env:USERPROFILE\.claude\skills\
+  ```
+- **OpenAI Codex** — copy the folder into Codex's skills directory (see your Codex setup's skills docs for the exact path).
+- **Other skill-capable agents** — drop the same `paper-figures/` folder into that agent's skills location. Because the skill is just `SKILL.md` + scripts, one folder works everywhere; only the destination directory differs per agent.
+
+**3. Install the Python dependencies:**
 
 ```bash
 pip install -r paper-figures/requirements.txt
 ```
 
-The skill triggers automatically when you ask Claude to make figures or tables for a paper.
+Once installed, the skill triggers when you ask the agent to make figures or tables for a paper.
 
 > Run `python paper-figures/scripts/figstyle.py --list` to see the bundled journal presets.
 
