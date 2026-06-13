@@ -188,11 +188,34 @@ for f in make_*.py; do python "$f"; done   # regenerates every figure, table & t
 
 This project's **code** is released under the [MIT License](LICENSE).
 
-The two worked examples reuse real published datasets under open licenses — please keep the
-attribution if you reuse them:
+The two worked examples are built entirely from **other researchers' published, openly-licensed
+data**. All credit for the data belongs to the original authors below — please keep this
+attribution if you reuse the examples. / 两个案例完全基于**他人已发表、开放许可的数据**构建,
+数据著作权归下列原作者所有,转用请保留署名。
 
-- 🐧 **Penguins** — Gorman, Williams & Fraser (2014), *PLOS ONE* 9(3):e90081 (CC BY 4.0); data via the `palmerpenguins` package (CC0). [Details](examples/penguins-sexual-dimorphism/README.md#source--attribution--来源与署名)
-- 🫀 **Heart failure** — Chicco & Jurman (2020), *BMC Med Inform Decis Mak* 20:16 (CC BY 4.0); UCI dataset 519 (CC BY 4.0). [Details](examples/heart-failure-survival/README.md#source--attribution--来源与署名)
+### 🐧 Example 1 — Antarctic penguins / 南极企鹅
+> **Paper (CC BY 4.0):** Gorman KB, Williams TD, Fraser WR (2014). *Ecological Sexual Dimorphism
+> and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis).*
+> **PLOS ONE** 9(3): e90081. https://doi.org/10.1371/journal.pone.0090081
+>
+> **Data (CC0):** collected by Dr. Kristen Gorman and the Palmer Station Antarctica LTER
+> (PAL-LTER); distributed via the `palmerpenguins` R package — Horst AM, Hill AP, Gorman KB
+> (2020). https://allisonhorst.github.io/palmerpenguins/ · doi:10.5281/zenodo.3960218
+
+### 🫀 Example 2 — Heart-failure survival / 心衰生存
+> **Paper (CC BY 4.0):** Chicco D, Jurman G (2020). *Machine learning can predict survival of
+> patients with heart failure from serum creatinine and ejection fraction alone.* **BMC Medical
+> Informatics and Decision Making** 20: 16. https://doi.org/10.1186/s12911-020-1023-5
+>
+> **Original data collection:** Ahmad T, Munir A, Bhatti SH, Aftab M, Raza MA (2017). *Survival
+> analysis of heart failure patients: A case study.* **PLOS ONE** 12(7): e0181001.
+> https://doi.org/10.1371/journal.pone.0181001
+>
+> **Dataset (CC BY 4.0):** UCI Machine Learning Repository, *Heart failure clinical records*
+> (dataset 519). https://archive.ics.uci.edu/dataset/519/heart+failure+clinical+records
+
+Per-example details and license notes: [penguins](examples/penguins-sexual-dimorphism/README.md#source--attribution--来源与署名)
+· [heart failure](examples/heart-failure-survival/README.md#source--attribution--来源与署名).
 
 <div align="center">
 
